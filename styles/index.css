@@ -1,0 +1,23 @@
+.login-btn {
+  padding: 10px 20px;
+  background-color: #eceedf;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+}
+.signUp-btn {
+  padding: 10px 20px;
+  background-color: #bbdce5;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    to right,
+    #a1c4fd 0%,
+    #c2e9fb 51%,
+    #a1c4fd 100%
+  );
+}
+.signUp-btn:hover {
+  background-position: right center;
+}
