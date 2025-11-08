@@ -20,157 +20,183 @@
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
   </head>
-  <body>
+  <body class="overflow-x-hidden">
+    <!-- Header -->
     <header class="bg-[#e5e4f880]">
       <nav
-        class="flex justify-between items-center h-[150px] px-[83px] py-[30px]"
+        class="flex justify-between items-center h-[150px] px-[83px] py-[30px] max-md:px-6 max-md:h-auto max-md:py-5 relative"
       >
-        <img src="./images/logo.png" alt="Aqua Mate Logo" />
-        <ul class="items-center flex gap-[50px]">
-          <button class="login-btn" class="font-semibold">
+        <img
+          src="./images/logo.png"
+          alt="Aqua Mate Logo"
+          class="w-[140px] max-md:w-[110px]"
+        />
+
+        <!-- Hamburger button (mobile only) -->
+        <button
+          id="menu-btn"
+          class="text-[#1a2b5b] text-3xl md:hidden focus:outline-none"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Menu -->
+        <ul
+          id="menu"
+          class="items-center flex gap-[50px] max-md:hidden max-md:flex-col max-md:absolute max-md:top-[100px] max-md:left-0 max-md:bg-[#e5e4f8] max-md:w-full max-md:py-5 max-md:shadow-lg z-50"
+        >
+          <button class="login-btn font-semibold">
             <a href="">Log In</a>
           </button>
-          <button class="signUp-btn" class="font-semibold">
+          <button class="signUp-btn font-semibold">
             <a href="">Sign Up</a>
           </button>
         </ul>
       </nav>
     </header>
 
+    <!-- Toggle Script -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
     <!-- get started section  -->
     <section class="bg-[#FFFFFF]">
-      <div class="flex justify-between items-center">
-        <div class="ml-[84px] mt-[59px]">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center text-center md:text-left"
+      >
+        <div class="ml-[84px] mt-[59px] max-md:ml-0">
           <h1
-            class="text-4xl font-bold text-[#003366] mb-[28px]"
-            class="raleway-normal"
+            class="text-4xl font-bold text-[#003366] mb-[28px] raleway-normal max-md:text-2xl"
           >
-            Where Technology <br />
-            Meets the Heart of <br />
+            Where Technology <br class="max-md:hidden" />
+            Meets the Heart of <br class="max-md:hidden" />
             Aquaculture.
           </h1>
-          <p class="text-gray-500 mb-[32px]">
-            Helping hatchery farmers nurture <br />
-            life with smart monitoring and <br />
+          <p class="text-gray-500 mb-[32px] max-md:text-sm">
+            Helping hatchery farmers nurture <br class="max-md:hidden" />
+            life with smart monitoring and <br class="max-md:hidden" />
             gentle guidance.
           </p>
-          <button class="login-btn" class="mb-[38px]">
+          <button class="login-btn mb-[38px]">
             <a href="">Get Started</a>
           </button>
         </div>
-        <div class="mt-[75px] mr-[73px] mb-[85px]">
-          <img src="./images/section-1.png" alt="" />
+        <div class="mt-[75px] mr-[73px] mb-[85px] max-md:mr-0">
+          <img
+            src="./images/section-1.png"
+            alt=""
+            class="max-md:w-[300px] mx-auto"
+          />
         </div>
       </div>
     </section>
 
     <!-- aqua mate demo section  -->
     <section class="bg-[#e5e4f880] mb-[16px]">
-      <div class="mx-[250px] mt-[70] mb-[84]">
-        <img src="./images/image 4.png" alt="" />
+      <div class="mx-[250px] mt-[70] mb-[84] max-md:mx-4">
+        <img src="./images/image 4.png" alt="" class="w-full rounded-lg" />
       </div>
     </section>
 
     <!-- sponsor section  -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
-    <section class="bg-[#FFFFFF]">
-      <div>
-        <h1
-          class="text-4xl font-bold text-[#003366] mb-[51px] ml-[77px] mr-[355px]"
-          class="raleway-normal"
-        >
-          Support the technology that protects <br />
+    <section class="py-12 md:py-20 bg-white">
+      <div class="px-6 md:px-20">
+        <h1 class="text-2xl md:text-4xl font-bold mb-8 leading-snug">
+          Support the technology that protects <br class="hidden md:block" />
           aquatic life.
         </h1>
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
-      </div>
-      <div class="ml-[84px]">
-        <p class="text-gray-400 mt-[17px] mb-[37px]">
+
+        <p class="text-gray-500 mb-6">
           Sponsor Aqua Mate and be part of the next wave in sustainable fish
           farming.
         </p>
         <button class="signUp-btn"><a href="">Become A Sponsor</a></button>
-      </div>
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
-      <div class="flex gap-[92px] mx-[84px]">
-        <div class="bg-[#e5e4f880] rounded-xl px-[24px] py-[24px]">
-          <p class="text-yellow-500 pb-[24px]">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </p>
-          <h4 class="font-bold pb-[8px]">Sponsored by XYZ</h4>
-          <p class="text-gray-700 pb-[24px]">
-            This template instantly leveled up our <br />
-            presence.” - Studio Vertex
-          </p>
-          <div class="flex gap-[6px]">
-            <img
-              src="./images/Avatar.png"
-              alt="Avatar"
-              width="30"
-              height="20"
-            />
 
-            <div>
-              <p class="text-gray-500">AquaLab Research Group</p>
-              <h5 class="text-gray-400">Date: 21- 11- 2025</h5>
+        <!-- Sponsor Cards -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 md:mt-16"
+        >
+          <!-- Card -->
+          <div
+            class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center"
+          >
+            <p class="text-yellow-500 mb-4 text-xl">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </p>
+            <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
+            <p class="text-gray-600 mb-6">
+              “This template instantly leveled up our presence.” - Studio Vertex
+            </p>
+            <div class="flex items-center justify-center gap-3">
+              <img
+                src="./images/Avatar.png"
+                alt="Avatar"
+                class="w-8 h-8 rounded-full"
+              />
+              <div class="text-left text-sm">
+                <p class="text-gray-600">AquaLab Research Group</p>
+                <p class="text-gray-400">Date: 21-11-2025</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-[#e5e4f880] rounded-xl px-[24px] py-[24px]">
-          <p class="text-yellow-500 pb-[24px]">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </p>
-          <h4 class="font-bold pb-[8px]">Sponsored by XYZ</h4>
-          <p class="text-gray-700 pb-[24px]">
-            This template instantly leveled up our <br />
-            presence.” - Studio Vertex
-          </p>
-          <div class="flex gap-[6px]">
-            <img
-              src="./images/Avatar.png"
-              alt="Avatar"
-              width="30"
-              height="20"
-            />
 
-            <div>
-              <p class="text-gray-500">AquaLab Research Group</p>
-              <h5 class="text-gray-400">Date: 21- 11- 2025</h5>
+          <!-- Duplicate Card -->
+          <div
+            class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center"
+          >
+            <p class="text-yellow-500 mb-4 text-xl">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </p>
+            <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
+            <p class="text-gray-600 mb-6">
+              “This template instantly leveled up our presence.” - Studio Vertex
+            </p>
+            <div class="flex items-center justify-center gap-3">
+              <img
+                src="./images/Avatar.png"
+                alt="Avatar"
+                class="w-8 h-8 rounded-full"
+              />
+              <div class="text-left text-sm">
+                <p class="text-gray-600">AquaLab Research Group</p>
+                <p class="text-gray-400">Date: 21-11-2025</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-[#e5e4f880] rounded-xl px-[24px] py-[24px]">
-          <p class="text-yellow-500 pb-[24px]">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </p>
-          <h4 class="font-bold pb-[8px]">Sponsored by XYZ</h4>
-          <p class="text-gray-700 pb-[24px]">
-            This template instantly leveled up <br />
-            our presence.” - Studio Vertex
-          </p>
-          <div class="flex gap-[6px]">
-            <img
-              src="./images/Avatar.png"
-              alt="Avatar"
-              width="30"
-              height="20"
-            />
 
-            <div>
-              <p class="text-gray-500">AquaLab Research Group</p>
-              <h5 class="text-gray-400">Date: 21- 11- 2025</h5>
+          <!-- Duplicate Card -->
+          <div
+            class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center"
+          >
+            <p class="text-yellow-500 mb-4 text-xl">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </p>
+            <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
+            <p class="text-gray-600 mb-6">
+              “This template instantly leveled up our presence.” - Studio Vertex
+            </p>
+            <div class="flex items-center justify-center gap-3">
+              <img
+                src="./images/Avatar.png"
+                alt="Avatar"
+                class="w-8 h-8 rounded-full"
+              />
+              <div class="text-left text-sm">
+                <p class="text-gray-600">AquaLab Research Group</p>
+                <p class="text-gray-400">Date: 21-11-2025</p>
+              </div>
             </div>
           </div>
         </div>
@@ -315,7 +341,7 @@
 
         <!-- Image Row -->
         <div
-          class="bg-[#7a6c79] p-5 rounded-lg flex justify-between items-center gap-5"
+          class="bg-[#7a6c79] p-5 rounded-lg flex flex-wrap justify-center gap-5"
         >
           <!-- Image 1 -->
           <div
@@ -403,13 +429,34 @@
           </p>
         </div>
 
-        <div class="text-center mt-10 mx-[228px]">
+        <div class="text-center mt-10 mx-[20px] md:mx-[228px]">
           <p
             class="text-[#1a2b5b] text-lg md:text-xl font-semibold whitespace-nowrap drop-shadow-[2px_2px_3px_rgba(0,0,0,0.25)]"
           >
             From pond to phone because healthy water means healthy fish.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- fisherman section  -->
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
+    <section>
+      <div class="text-center">
+        <h1 class="text-[#1a2b5b] text-4xl font-bold mt-[19px]">
+          Fisherman Who Trust Aqua Mate
+        </h1>
+        <p class="text-gray-500 mt-[12px]">
+          Real stories. Real impact. Real trust.
+        </p>
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
+      </div>
+      <div class="ml-[87px]">
+        <h3 class="mb-[40px] font-medium text-2xl">
+          ⭐ 4.9/5 — Trusted by 200+ Farmers Across Bangladesh
+        </h3>
+        <button class="signUp-btn"><a href="">Rate Us</a></button>
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
       </div>
     </section>
   </body>
