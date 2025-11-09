@@ -1,85 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Aquamate</title>
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/common.css" />
-    <link rel="stylesheet" href="./styles/login.css" />
-  </head>
 
-  <body>
-    <main>
-      <div class="login-form-container">
-        <div class="login-form">
-          <div class="form-header">
-            <img class="logo" src="./images/logo.png" width="200" alt="Logo" />
-            <h1>Let's get started</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Aquamate</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/common.css" />
+  <link rel="stylesheet" href="./styles/login.css" />
+</head>
+
+<body>
+  <main>
+    <div class="login-form-container">
+      <div class="login-form">
+        <div class="form-header">
+          <img class="logo" src="./images/logo.png" width="200" alt="Logo" />
+          <h1>Let's get started</h1>
+        </div>
+
+        <form action="">
+          <div class="email form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" />
           </div>
 
-          <form action="">
-            <div class="email form-group">
-              <label for="email">Email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-control"
-                placeholder="Your email address"
-              />
+          <div class="password form-group">
+            <label for="password">Create a Password</label>
+            <div class="d-flex items-center form-control password-input-group">
+              <input type="password" id="password" name="password" class="flex-1" placeholder="Create a password" />
+              <img id="password-img" src="./images/eye-off.png" width="16px" height="16px" alt="password hide" />
             </div>
+          </div>
 
-            <div class="password form-group">
-              <label for="password">Create a Password</label>
-              <div
-                class="d-flex items-center form-control password-input-group"
-              >
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="flex-1"
-                  placeholder="Create a password"
-                />
-                <img
-                  id="password-img"
-                  src="./images/eye-off.png"
-                  width="16px"
-                  height="16px"
-                  alt="password hide"
-                />
-              </div>
-            </div>
+          <button type="submit" class="btn-primary">Log In</button>
 
-            <button type="submit" class="btn-primary">Log In</button>
-
-            <div class="form-footer">
-              <span>Not a user?</span>
-              <a href="./signup.html">Sign Up</a>
-            </div>
-          </form>
-        </div>
+          <div class="form-footer">
+            <span>Not a user?</span>
+            <a href="./signup.html">Sign Up</a>
+          </div>
+        </form>
       </div>
+    </div>
 
-      <div class="login-text-container">
-        <nav class="auth-nav">
-          <a href="/">Home</a>
-          <a href="/">Contact</a>
-        </nav>
-        <p class="quote">
-          “Welcome back! Your hatchery’s health is just a login away.”
-        </p>
-      </div>
-    </main>
+    <div class="login-text-container">
+      <nav class="auth-nav">
+        <a href="./index.html">Home</a>
+        <a href="./dashboard.html">Contact</a>
+      </nav>
+      <p class="quote">
+        “Welcome back! Your hatchery’s health is just a login away.”
+      </p>
+    </div>
+  </main>
 
-    <!-- script -->
-    <script src="./scripts/script.js"></script>
-  </body>
+  <!-- script -->
+  <script src="./scripts/script.js"></script>
+</body>
+
 </html>
