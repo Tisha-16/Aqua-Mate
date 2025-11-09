@@ -1,629 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aqua Mate</title>
-    <!-- tailwind cdn  -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- fonts link  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script
-      src="https://kit.fontawesome.com/0b5415b146.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/fonts.css" />
-  </head>
-  <body class="overflow-x-hidden">
-    <!-- Header -->
-    <header class="bg-[#e5e4f880]">
-      <nav
-        class="flex justify-between items-center h-[90px] px-[60px] py-[20px] max-md:px-6 max-md:h-auto max-md:py-4 relative"
-      >
-        <!-- Logo -->
-        <img
-          src="./images/logo.png"
-          alt="Aqua Mate Logo"
-          class="w-[120px] max-md:w-[100px]"
-        />
 
-        <!-- Hamburger button (mobile only) -->
-        <button
-          id="menu-btn"
-          class="text-[#1a2b5b] text-3xl md:hidden focus:outline-none"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqua Mate</title>
+  <!-- tailwind cdn  -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- fonts link  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://kit.fontawesome.com/0b5415b146.js" crossorigin="anonymous"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet" />
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/fonts.css" />
+</head>
 
-        <!-- Menu -->
-        <ul
-          id="menu"
-          class="hidden md:flex items-center gap-[40px] flex-col md:flex-row absolute md:static top-[70px] left-0 w-full md:w-auto bg-[#e5e4f8] md:bg-transparent py-5 md:py-0 shadow-lg md:shadow-none z-50"
-        >
-          <li>
-            <button
-              class="login-btn font-semibold text-[#1a2b5b] hover:text-[#364a8b] transition"
-            >
-              <a href="#">Log In</a>
-            </button>
-          </li>
-          <li>
-            <button
-              class="signUp-btn font-semibold bg-[#1a2b5b] text-white px-5 py-2 rounded-lg hover:bg-[#364a8b] transition"
-            >
-              <a href="#">Sign Up</a>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<body class="overflow-x-hidden">
+  <!-- Header -->
+  <header class="bg-[#e5e4f880]">
+    <nav
+      class="flex justify-between items-center h-[90px] px-[60px] py-[20px] max-md:px-6 max-md:h-auto max-md:py-4 relative">
+      <!-- Logo -->
+      <img src="./images/logo.png" alt="Aqua Mate Logo" class="w-[120px] max-md:w-[100px]" />
 
-    <!-- Toggle Script -->
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
+      <!-- Hamburger button (mobile only) -->
+      <button id="menu-btn" class="text-[#1a2b5b] text-3xl md:hidden focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-      menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
-
-    <!-- get started section  -->
-    <section class="bg-[#FFFFFF]">
-      <div
-        class="flex flex-col md:flex-row justify-between items-center text-center md:text-left"
-      >
-        <div class="ml-[84px] mt-[59px] max-md:ml-0">
-          <h1
-            class="text-4xl font-bold text-[#003366] mb-[28px] raleway-normal max-md:text-2xl"
-          >
-            Where Technology <br class="max-md:hidden" />
-            Meets the Heart of <br class="max-md:hidden" />
-            Aquaculture.
-          </h1>
-          <p class="text-gray-500 mb-[32px] max-md:text-sm">
-            Helping hatchery farmers nurture <br class="max-md:hidden" />
-            life with smart monitoring and <br class="max-md:hidden" />
-            gentle guidance.
-          </p>
-          <button class="login-btn mb-[38px]">
-            <a href="">Get Started</a>
+      <!-- Menu -->
+      <ul id="menu"
+        class="hidden md:flex items-center gap-[40px] flex-col md:flex-row absolute md:static top-[70px] left-0 w-full md:w-auto bg-[#e5e4f8] md:bg-transparent py-5 md:py-0 shadow-lg md:shadow-none z-50">
+        <li>
+          <button class="login-btn font-semibold text-[#1a2b5b] hover:text-[#364a8b] transition">
+            <a href="#">Log In</a>
           </button>
-        </div>
-        <div class="mt-[75px] mr-[73px] mb-[85px] max-md:mr-0">
-          <img
-            src="./images/section-1.png"
-            alt=""
-            class="max-md:w-[300px] mx-auto"
-          />
-        </div>
-      </div>
-    </section>
+        </li>
+        <li>
+          <button
+            class="signUp-btn font-semibold bg-[#1a2b5b] text-white px-5 py-2 rounded-lg hover:bg-[#364a8b] transition">
+            <a href="#">Sign Up</a>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- aqua mate demo section  -->
-    <section class="bg-[#e5e4f880] mb-[16px]">
-      <div class="mx-[250px] mt-[70] mb-[84] max-md:mx-4">
-        <img src="./images/image 4.png" alt="" class="w-full rounded-lg" />
-      </div>
-    </section>
+  <!-- Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
 
-    <!-- sponsor section  -->
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
-    <section class="py-12 md:py-20 bg-white">
-      <div class="px-6 md:px-20">
-        <h1 class="text-2xl md:text-4xl font-bold mb-8 leading-snug">
-          Support the technology that protects <br class="hidden md:block" />
-          aquatic life.
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- get started section  -->
+  <section class="bg-[#FFFFFF]">
+    <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+      <div class="ml-[84px] mt-[59px] max-md:ml-0">
+        <h1 class="text-4xl font-bold text-[#003366] mb-[28px] raleway-normal max-md:text-2xl">
+          Where Technology <br class="max-md:hidden" />
+          Meets the Heart of <br class="max-md:hidden" />
+          Aquaculture.
         </h1>
-
-        <p class="text-gray-500 mb-6">
-          Sponsor Aqua Mate and be part of the next wave in sustainable fish
-          farming.
+        <p class="text-gray-500 mb-[32px] max-md:text-sm">
+          Helping hatchery farmers nurture <br class="max-md:hidden" />
+          life with smart monitoring and <br class="max-md:hidden" />
+          gentle guidance.
         </p>
-        <button class="signUp-btn"><a href="">Become A Sponsor</a></button>
-
-        <!-- Sponsor Cards -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 md:mt-16"
-        >
-          <!-- Card -->
-          <div
-            class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center"
-          >
-            <p class="text-yellow-500 mb-4 text-xl">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </p>
-            <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
-            <p class="text-gray-600 mb-6">
-              “This template instantly leveled up our presence.” - Studio Vertex
-            </p>
-            <div class="flex items-center justify-center gap-3">
-              <img
-                src="./images/Avatar.png"
-                alt="Avatar"
-                class="w-8 h-8 rounded-full"
-              />
-              <div class="text-left text-sm">
-                <p class="text-gray-600">AquaLab Research Group</p>
-                <p class="text-gray-400">Date: 21-11-2025</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Duplicate Card -->
-          <div
-            class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center"
-          >
-            <p class="text-yellow-500 mb-4 text-xl">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </p>
-            <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
-            <p class="text-gray-600 mb-6">
-              “This template instantly leveled up our presence.” - Studio Vertex
-            </p>
-            <div class="flex items-center justify-center gap-3">
-              <img
-                src="./images/Avatar.png"
-                alt="Avatar"
-                class="w-8 h-8 rounded-full"
-              />
-              <div class="text-left text-sm">
-                <p class="text-gray-600">AquaLab Research Group</p>
-                <p class="text-gray-400">Date: 21-11-2025</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Duplicate Card -->
-          <div
-            class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center"
-          >
-            <p class="text-yellow-500 mb-4 text-xl">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </p>
-            <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
-            <p class="text-gray-600 mb-6">
-              “This template instantly leveled up our presence.” - Studio Vertex
-            </p>
-            <div class="flex items-center justify-center gap-3">
-              <img
-                src="./images/Avatar.png"
-                alt="Avatar"
-                class="w-8 h-8 rounded-full"
-              />
-              <div class="text-left text-sm">
-                <p class="text-gray-600">AquaLab Research Group</p>
-                <p class="text-gray-400">Date: 21-11-2025</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="login-btn mb-[38px]">
+          <a href="">Get Started</a>
+        </button>
       </div>
-    </section>
+      <div class="mt-[75px] mr-[73px] mb-[85px] max-md:mr-0">
+        <img src="./images/section-1.png" alt="" class="max-md:w-[300px] mx-auto" />
+      </div>
+    </div>
+  </section>
 
-    <!-- why aqua mate?  -->
-    <section class="bg-[#e5e4f880] py-16 flex justify-center mt-[35px]">
-      <div
-        class="bg-white w-[880px] rounded-2xl shadow-md px-[68px] pt-[68px] pb-[97px]"
-      >
-        <!-- Heading -->
-        <div class="mb-12 text-center">
-          <h2 class="text-[26px] font-semibold text-[#1a2b5b]">
-            Why Aqua Mate?
-          </h2>
-          <p class="text-gray-500 text-[14px] mt-1">
-            Because every fish deserves care, and every farmer deserves
-            confidence.
+  <!-- aqua mate demo section  -->
+  <section class="bg-[#e5e4f880] mb-[16px]">
+    <div class="mx-[250px] mt-[70] mb-[84] max-md:mx-4">
+      <img src="./images/image 4.png" alt="" class="w-full rounded-lg" />
+    </div>
+  </section>
+
+  <!-- sponsor section  -->
+  <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
+  <section class="py-12 md:py-20 bg-white">
+    <div class="px-6 md:px-20">
+      <h1 class="text-2xl md:text-4xl font-bold mb-8 leading-snug">
+        Support the technology that protects <br class="hidden md:block" />
+        aquatic life.
+      </h1>
+
+      <p class="text-gray-500 mb-6">
+        Sponsor Aqua Mate and be part of the next wave in sustainable fish
+        farming.
+      </p>
+      <button class="signUp-btn"><a href="">Become A Sponsor</a></button>
+
+      <!-- Sponsor Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 md:mt-16">
+        <!-- Card -->
+        <div class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center">
+          <p class="text-yellow-500 mb-4 text-xl">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </p>
-        </div>
-
-        <!-- Top Row -->
-        <div class="grid grid-cols-2 gap-10 items-center mb-12">
-          <!-- Left Image -->
-          <div>
-            <img
-              src="./images/picture-1.png"
-              alt="Fish Tank"
-              class="rounded-xl w-full h-[250px] object-cover shadow"
-            />
-          </div>
-
-          <!-- Right Cards -->
-          <div class="flex flex-col gap-5">
-            <!-- Card 1 -->
-            <div
-              class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100"
-            >
-              <img
-                src="./images/image 5 (1).png"
-                alt="Sensor"
-                class="w-7 h-7"
-              />
-              <div>
-                <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
-                  Real-Time Insights
-                </h3>
-                <p class="text-gray-500 text-[13px]">
-                  Continuously tracks temperature, pH, and oxygen levels.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100"
-            >
-              <img src="./images/alert.png" alt="Alert Icon" class="w-7 h-7" />
-              <div>
-                <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
-                  Instant Alerts
-                </h3>
-                <p class="text-gray-500 text-[13px]">
-                  Get notified instantly when environmental changes occur.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Row -->
-        <div class="grid grid-cols-2 gap-10 items-center">
-          <!-- Left Cards -->
-          <div class="flex flex-col gap-5">
-            <!-- Card 3 -->
-            <div
-              class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
-                alt="Dashboard Icon"
-                class="w-7 h-7"
-              />
-              <div>
-                <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
-                  Smart Dashboard
-                </h3>
-                <p class="text-gray-500 text-[13px]">
-                  Monitor everything in one clean, easy-to-read place.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-              class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/4149/4149754.png"
-                alt="Fisherman Icon"
-                class="w-7 h-7"
-              />
-              <div>
-                <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
-                  Fisherman-Focused Design
-                </h3>
-                <p class="text-gray-500 text-[13px]">
-                  Built with fishermen in mind for real-life problems.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Image -->
-          <div>
-            <img
-              src="./images/picture-2.png"
-              alt="Aquarium Art"
-              class="rounded-xl w-full h-[250px] object-cover shadow"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- how aqua mate works?  -->
-    <section class="bg-[#FFFFFF] py-16 flex justify-center">
-      <div
-        class="bg-[#e5e4f880] w-full max-w-[880px] rounded-2xl shadow-md px-[68px] py-[68px]"
-      >
-        <!-- Heading -->
-        <div class="text-center mb-10">
-          <h2 class="text-[22px] font-semibold text-[#1a2b5b]">
-            How Aqua Mate Works
-          </h2>
-          <p class="text-gray-500 text-[14px] mt-2 leading-relaxed">
-            Empowering farmers with real-time<br />
-            water insights so every fish stays healthy, and every pond thrives.
+          <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
+          <p class="text-gray-600 mb-6">
+            “This template instantly leveled up our presence.” - Studio Vertex
           </p>
+          <div class="flex items-center justify-center gap-3">
+            <img src="./images/Avatar.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+            <div class="text-left text-sm">
+              <p class="text-gray-600">AquaLab Research Group</p>
+              <p class="text-gray-400">Date: 21-11-2025</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Image Row -->
-        <div
-          class="bg-[#7a6c79] p-5 rounded-lg flex flex-wrap justify-center gap-5"
-        >
-          <!-- Image 1 -->
-          <div
-            class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm"
-          >
-            IMG1
+        <!-- Duplicate Card -->
+        <div class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center">
+          <p class="text-yellow-500 mb-4 text-xl">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </p>
+          <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
+          <p class="text-gray-600 mb-6">
+            “This template instantly leveled up our presence.” - Studio Vertex
+          </p>
+          <div class="flex items-center justify-center gap-3">
+            <img src="./images/Avatar.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+            <div class="text-left text-sm">
+              <p class="text-gray-600">AquaLab Research Group</p>
+              <p class="text-gray-400">Date: 21-11-2025</p>
+            </div>
           </div>
+        </div>
 
-          <!-- Image 2 -->
-          <div
-            class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm"
-          >
-            IMG1
-          </div>
-
-          <!-- Image 3 -->
-          <div
-            class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm"
-          >
-            IMG1
-          </div>
-
-          <!-- Image 4 -->
-          <div
-            class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm"
-          >
-            IMG1
+        <!-- Duplicate Card -->
+        <div class="bg-[#e5e4f880] rounded-xl px-6 py-8 shadow-sm text-center">
+          <p class="text-yellow-500 mb-4 text-xl">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </p>
+          <h4 class="font-bold mb-2">Sponsored by XYZ</h4>
+          <p class="text-gray-600 mb-6">
+            “This template instantly leveled up our presence.” - Studio Vertex
+          </p>
+          <div class="flex items-center justify-center gap-3">
+            <img src="./images/Avatar.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+            <div class="text-left text-sm">
+              <p class="text-gray-600">AquaLab Research Group</p>
+              <p class="text-gray-400">Date: 21-11-2025</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- another details section  -->
-    <section class="bg-[#FFFFFF] py-16 flex justify-center">
-      <div class="w-[95%] max-w-[880px] grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- why aqua mate?  -->
+  <section class="bg-[#e5e4f880] py-16 flex justify-center mt-[35px]">
+    <div class="bg-white w-[880px] rounded-2xl shadow-md px-[68px] pt-[68px] pb-[97px]">
+      <!-- Heading -->
+      <div class="mb-12 text-center">
+        <h2 class="text-[26px] font-semibold text-[#1a2b5b]">
+          Why Aqua Mate?
+        </h2>
+        <p class="text-gray-500 text-[14px] mt-1">
+          Because every fish deserves care, and every farmer deserves
+          confidence.
+        </p>
+      </div>
+
+      <!-- Top Row -->
+      <div class="grid grid-cols-2 gap-10 items-center mb-12">
+        <!-- Left Image -->
+        <div>
+          <img src="./images/picture-1.png" alt="Fish Tank" class="rounded-xl w-full h-[250px] object-cover shadow" />
+        </div>
+
+        <!-- Right Cards -->
+        <div class="flex flex-col gap-5">
+          <!-- Card 1 -->
+          <div class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100">
+            <img src="./images/image 5 (1).png" alt="Sensor" class="w-7 h-7" />
+            <div>
+              <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
+                Real-Time Insights
+              </h3>
+              <p class="text-gray-500 text-[13px]">
+                Continuously tracks temperature, pH, and oxygen levels.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100">
+            <img src="./images/alert.png" alt="Alert Icon" class="w-7 h-7" />
+            <div>
+              <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
+                Instant Alerts
+              </h3>
+              <p class="text-gray-500 text-[13px]">
+                Get notified instantly when environmental changes occur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="grid grid-cols-2 gap-10 items-center">
+        <!-- Left Cards -->
+        <div class="flex flex-col gap-5">
+          <!-- Card 3 -->
+          <div class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Dashboard Icon" class="w-7 h-7" />
+            <div>
+              <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
+                Smart Dashboard
+              </h3>
+              <p class="text-gray-500 text-[13px]">
+                Monitor everything in one clean, easy-to-read place.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="flex items-start gap-3 bg-[#f7f8fd] rounded-xl p-5 shadow-sm border border-gray-100">
+            <img src="https://cdn-icons-png.flaticon.com/512/4149/4149754.png" alt="Fisherman Icon" class="w-7 h-7" />
+            <div>
+              <h3 class="text-[#1a2b5b] font-semibold text-[15px] mb-1">
+                Fisherman-Focused Design
+              </h3>
+              <p class="text-gray-500 text-[13px]">
+                Built with fishermen in mind for real-life problems.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div>
+          <img src="./images/picture-2.png" alt="Aquarium Art"
+            class="rounded-xl w-full h-[250px] object-cover shadow" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- how aqua mate works?  -->
+  <section class="bg-[#FFFFFF] py-16 flex justify-center">
+    <div class="bg-[#e5e4f880] w-full max-w-[880px] rounded-2xl shadow-md px-[68px] py-[68px]">
+      <!-- Heading -->
+      <div class="text-center mb-10">
+        <h2 class="text-[22px] font-semibold text-[#1a2b5b]">
+          How Aqua Mate Works
+        </h2>
+        <p class="text-gray-500 text-[14px] mt-2 leading-relaxed">
+          Empowering farmers with real-time<br />
+          water insights so every fish stays healthy, and every pond thrives.
+        </p>
+      </div>
+
+      <!-- Image Row -->
+      <div class="bg-[#7a6c79] p-5 rounded-lg flex flex-wrap justify-center gap-5">
+        <!-- Image 1 -->
+        <div
+          class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm">
+          IMG1
+        </div>
+
+        <!-- Image 2 -->
+        <div
+          class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm">
+          IMG1
+        </div>
+
+        <!-- Image 3 -->
+        <div
+          class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm">
+          IMG1
+        </div>
+
+        <!-- Image 4 -->
+        <div
+          class="bg-gray-200 w-[140px] h-[140px] flex items-center justify-center text-black font-medium rounded-md shadow-sm">
+          IMG1
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- another details section  -->
+  <section class="bg-[#FFFFFF] py-16 flex justify-center">
+    <div class="w-[95%] max-w-[880px] grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
+          Senses Water Quality
+        </h1>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Aqua Mate’s sensors continuously track pH, temperature, and oxygen
+          levels from different water depths.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
+          Cloud Upload
+        </h1>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          The ESP32 sends the collected data to the cloud in real-time via
+          Wi-Fi.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
+          Analyzes in Real-Time
+        </h1>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          The server checks the readings against ideal conditions for fish
+          health.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
+          Alert & Dashboard Update
+        </h1>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          If anything goes wrong, the system instantly alerts the farmer
+          through notifications and updates the dashboard.
+        </p>
+      </div>
+
+      <div class="text-center mt-10 mx-[20px] md:mx-[228px]">
+        <p
+          class="text-[#1a2b5b] text-lg md:text-xl font-semibold whitespace-nowrap drop-shadow-[2px_2px_3px_rgba(0,0,0,0.25)]">
+          From pond to phone because healthy water means healthy fish.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- fisherman section  -->
+  <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
+  <section>
+    <div class="text-center">
+      <h1 class="text-[#1a2b5b] text-4xl font-bold mt-[19px]">
+        Fisherman Who Trust Aqua Mate
+      </h1>
+      <p class="text-gray-500 mt-[12px]">
+        Real stories. Real impact. Real trust.
+      </p>
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
+    </div>
+    <div class="ml-[87px]">
+      <h3 class="mb-[40px] font-medium text-2xl">
+        ⭐ 4.9/5 — Trusted by 200+ Farmers Across Bangladesh
+      </h3>
+      <button class="signUp-btn"><a href="">Rate Us</a></button>
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
+    </div>
+  </section>
+
+  <!-- user review  -->
+  <section class="bg-[#f7f6fb] border-b border-gray-100 py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Card 1 -->
-        <div
-          class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
-        >
-          <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
-            Senses Water Quality
-          </h1>
-          <p class="text-gray-500 text-sm leading-relaxed">
-            Aqua Mate’s sensors continuously track pH, temperature, and oxygen
-            levels from different water depths.
+        <div class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="./images/Avatar.png" alt="Rafiq" class="w-10 h-10 rounded-full object-cover" />
+            <h3 class="font-semibold text-[#1a2b5b]">Rafiq, Khulna</h3>
+          </div>
+          <div class="text-yellow-400 text-sm mb-3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Before Aqua Mate, I lost many fish during monsoon. Now I get early
+            alerts. My yield has increased by 30%!
           </p>
         </div>
 
         <!-- Card 2 -->
-        <div
-          class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
-        >
-          <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
-            Cloud Upload
-          </h1>
-          <p class="text-gray-500 text-sm leading-relaxed">
-            The ESP32 sends the collected data to the cloud in real-time via
-            Wi-Fi.
+        <div class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="./images/Avatar.png" alt="Salma" class="w-10 h-10 rounded-full object-cover" />
+            <h3 class="font-semibold text-[#1a2b5b]">Salma, Cumilla</h3>
+          </div>
+          <div class="text-yellow-400 text-sm mb-3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            The app tells me when oxygen levels drop. I never imagined
+            technology could make fish farming this easy!
           </p>
         </div>
 
         <!-- Card 3 -->
-        <div
-          class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
-        >
-          <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
-            Analyzes in Real-Time
-          </h1>
-          <p class="text-gray-500 text-sm leading-relaxed">
-            The server checks the readings against ideal conditions for fish
-            health.
+        <div class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="./images/Avatar.png" alt="Habib" class="w-10 h-10 rounded-full object-cover" />
+            <h3 class="font-semibold text-[#1a2b5b]">Habib, Cumilla</h3>
+          </div>
+          <div class="text-yellow-400 text-sm mb-3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            I can finally relax knowing my ponds are being monitored 24/7.
+            Aqua Mate is my silent pond assistant.
           </p>
         </div>
 
         <!-- Card 4 -->
-        <div
-          class="bg-[#e5e4f880] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
-        >
-          <h1 class="text-[#1a2b5b] text-lg font-semibold mb-3">
-            Alert & Dashboard Update
-          </h1>
-          <p class="text-gray-500 text-sm leading-relaxed">
-            If anything goes wrong, the system instantly alerts the farmer
-            through notifications and updates the dashboard.
-          </p>
-        </div>
-
-        <div class="text-center mt-10 mx-[20px] md:mx-[228px]">
-          <p
-            class="text-[#1a2b5b] text-lg md:text-xl font-semibold whitespace-nowrap drop-shadow-[2px_2px_3px_rgba(0,0,0,0.25)]"
-          >
-            From pond to phone because healthy water means healthy fish.
+        <div class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="./images/Avatar.png" alt="Habib" class="w-10 h-10 rounded-full object-cover" />
+            <h3 class="font-semibold text-[#1a2b5b]">Habib, Barura</h3>
+          </div>
+          <div class="text-yellow-400 text-sm mb-3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            I used to guess what my water needed. Now, I know — and that’s
+            changed everything for my farm.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- fisherman section  -->
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
-    <section>
-      <div class="text-center">
-        <h1 class="text-[#1a2b5b] text-4xl font-bold mt-[19px]">
-          Fisherman Who Trust Aqua Mate
-        </h1>
-        <p class="text-gray-500 mt-[12px]">
-          Real stories. Real impact. Real trust.
+  <!-- footer  -->
+  <footer class="bg-white border-gray-200 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10">
+
+      <!-- Left Column -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1">
+        <img src="./images/logo.png" alt="Aqua Mate Logo" class="w-[180px] mb-4" />
+        <p class="text-gray-500 text-sm leading-relaxed max-w-md">
+          Your trusted partner in smarter, sustainable aquaculture helping
+          farmers protect their ponds, nurture healthier fish, and build a
+          better tomorrow.
         </p>
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
       </div>
-      <div class="ml-[87px]">
-        <h3 class="mb-[40px] font-medium text-2xl">
-          ⭐ 4.9/5 — Trusted by 200+ Farmers Across Bangladesh
-        </h3>
-        <button class="signUp-btn"><a href="">Rate Us</a></button>
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-150" />
+
+      <!-- Divider Column -->
+      <div class="hidden lg:flex flex-1 flex-row items-center justify-center gap-[24px]">
+        <div class="w-[1px] h-[180px] bg-gray-400"></div>
+        <div class="w-[1px] h-[220px] bg-black"></div>
+        <div class="w-[1px] h-[180px] bg-gray-400"></div>
       </div>
-    </section>
 
-    <!-- user review  -->
-    <section class="bg-[#f7f6fb] border-b border-gray-100 py-12 px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card 1 -->
-          <div
-            class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <img
-                src="./images/Avatar.png"
-                alt="Rafiq"
-                class="w-10 h-10 rounded-full object-cover"
-              />
-              <h3 class="font-semibold text-[#1a2b5b]">Rafiq, Khulna</h3>
-            </div>
-            <div class="text-yellow-400 text-sm mb-3">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Before Aqua Mate, I lost many fish during monsoon. Now I get early
-              alerts. My yield has increased by 30%!
-            </p>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <img
-                src="./images/Avatar.png"
-                alt="Salma"
-                class="w-10 h-10 rounded-full object-cover"
-              />
-              <h3 class="font-semibold text-[#1a2b5b]">Salma, Cumilla</h3>
-            </div>
-            <div class="text-yellow-400 text-sm mb-3">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              The app tells me when oxygen levels drop. I never imagined
-              technology could make fish farming this easy!
-            </p>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <img
-                src="./images/Avatar.png"
-                alt="Habib"
-                class="w-10 h-10 rounded-full object-cover"
-              />
-              <h3 class="font-semibold text-[#1a2b5b]">Habib, Cumilla</h3>
-            </div>
-            <div class="text-yellow-400 text-sm mb-3">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              I can finally relax knowing my ponds are being monitored 24/7.
-              Aqua Mate is my silent pond assistant.
-            </p>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <img
-                src="./images/Avatar.png"
-                alt="Habib"
-                class="w-10 h-10 rounded-full object-cover"
-              />
-              <h3 class="font-semibold text-[#1a2b5b]">Habib, Barura</h3>
-            </div>
-            <div class="text-yellow-400 text-sm mb-3">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              I used to guess what my water needed. Now, I know — and that’s
-              changed everything for my farm.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- footer  -->
-    <footer class="bg-white border-gray-200 py-10">
+      <!-- Right Column -->
       <div
-        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10"
-      >
-        <!-- Left columns-->
-        <div
-          class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1"
-        >
-          <img
-            src="./images/logo.png"
-            alt="Aqua Mate Logo"
-            class="w-[180px] mb-4"
-          />
-          <p class="text-gray-500 text-sm leading-relaxed max-w-md">
-            Your trusted partner in smarter, sustainable aquaculture helping
-            farmers protect their ponds, nurture healthier fish, and build a
-            better tomorrow.
-          </p>
-        </div>
-
-        <!-- Triple Divider (only visible on large screens) -->
-        <div class="lg:flex flex items-center justify-center gap-[24px] px-4">
-          <div class="w-[1px] h-[180px] bg-gray-400"></div>
-          <div class="w-[1px] h-[220px] bg-black"></div>
-          <div class="w-[1px] h-[180px] bg-gray-400"></div>
-        </div>
-
-        <!-- Right Columns -->
-        <div
-          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-16 gap-y-3 text-gray-500 text-sm text-center lg:text-left"
-        >
-          <a href="#" class="hover:text-[#1a2b5b] transition">Home</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition">Features</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition">About Us</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition">Pricing</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition">Blog</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition">Privacy Policy</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition">FAQ</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition"
-            >Terms of Service</a
-          >
-          <a href="#" class="hover:text-[#1a2b5b] transition">Contact Us</a>
-          <a href="#" class="hover:text-[#1a2b5b] transition">Help Center</a>
-        </div>
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-16 gap-y-3 text-gray-500 text-sm text-center lg:text-left flex-1">
+        <a href="#" class="hover:text-[#1a2b5b] transition">Home</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">Features</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">About Us</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">Pricing</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">Blog</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">Privacy Policy</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">FAQ</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">Terms of Service</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">Contact Us</a>
+        <a href="#" class="hover:text-[#1a2b5b] transition">Help Center</a>
       </div>
-    </footer>
-  </body>
+
+    </div>
+  </footer>
+
+</body>
+
 </html>
