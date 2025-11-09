@@ -1,160 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signup | Aquamate</title>
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/common.css" />
-    <link rel="stylesheet" href="./styles/signup.css" />
-  </head>
 
-  <body>
-    <main>
-      <div class="sign-up-form-container">
-        <div class="sign-up-form">
-          <div class="form-header">
-            <img class="logo" src="./images/logo.png" width="200" alt="Logo" />
-            <h1 class="h1">Let’s get started</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup | Aquamate</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/common.css" />
+  <link rel="stylesheet" href="./styles/signup.css" />
+</head>
+
+<body>
+  <main>
+    <div class="sign-up-form-container">
+      <div class="sign-up-form">
+        <div class="form-header">
+          <img class="logo" src="./images/logo.png" width="200" alt="Logo" />
+          <h1 class="h1">Let’s get started</h1>
+        </div>
+
+        <form action="">
+          <div class="full-name form-group">
+            <label for="full-name">Full name</label>
+            <input type="text" id="full-name" name="full-name" class="form-control" placeholder="Your full name" />
           </div>
 
-          <form action="">
-            <div class="full-name form-group">
-              <label for="full-name">Full name</label>
-              <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                class="form-control"
-                placeholder="Your full name"
-              />
-            </div>
+          <div class="email form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" />
+          </div>
 
-            <div class="email form-group">
-              <label for="email">Email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-control"
-                placeholder="Your email address"
-              />
-            </div>
-
-            <div class="phone form-group">
-              <label for="phone">Phone number</label>
-              <div class="d-flex items-center form-control phone-input-group">
-                <div class="d-flex items-center country-code-picker">
-                  <img
-                    src="./images/bd-flag.png"
-                    width="20px"
-                    height="20px"
-                    alt="bd-flag"
-                  />
-                  <img
-                    src="./images/arrow-down.png"
-                    width="8px"
-                    alt="Dropdown arrow"
-                  />
-                </div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Your phone number"
-                  class="flex-1"
-                  value="+88"
-                  maxlength="14"
-                />
+          <div class="phone form-group">
+            <label for="phone">Phone number</label>
+            <div class="d-flex items-center form-control phone-input-group">
+              <div class="d-flex items-center country-code-picker">
+                <img src="./images/bd-flag.png" width="20px" height="20px" alt="bd-flag" />
+                <img src="./images/arrow-down.png" width="8px" alt="Dropdown arrow" />
               </div>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number" class="flex-1" value="+88"
+                maxlength="14" />
             </div>
+          </div>
 
-            <div class="password form-group">
-              <label for="password">Create a Password</label>
-              <div
-                class="d-flex items-center form-control password-input-group"
-              >
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="flex-1"
-                  placeholder="Create a password"
-                />
-                <img
-                  id="password-img"
-                  src="./images/eye-off.png"
-                  width="16px"
-                  height="16px"
-                  alt="password hide"
-                />
-              </div>
-              <p class="help-text">
-                Password must contain a minimum of 8 characters
-              </p>
-              <p class="help-text">
-                Password must contain at least one symbol e.g. @, !
-              </p>
+          <div class="password form-group">
+            <label for="password">Create a Password</label>
+            <div class="d-flex items-center form-control password-input-group">
+              <input type="password" id="password" name="password" class="flex-1" placeholder="Create a password" />
+              <img id="password-img" src="./images/eye-off.png" width="16px" height="16px" alt="password hide" />
             </div>
+            <p class="help-text">
+              Password must contain a minimum of 8 characters
+            </p>
+            <p class="help-text">
+              Password must contain at least one symbol e.g. @, !
+            </p>
+          </div>
 
-            <div class="location form-group">
-              <label for="location"
-                >Location <span class="optional-text">(optional)</span></label
-              >
-              <div class="form-control d-flex justify-between items-center">
-                <select
-                  type="text"
-                  id="location"
-                  name="location"
-                  placeholder="Select Location"
-                >
-                  <option>Select Location</option>
-                  <option value="dhaka">Dhaka</option>
-                  <option value="cumilla">Cumilla</option>
-                  <option value="cumilla">Chottogram</option>
-                  <option value="cumilla">Shylet</option>
-                  <option value="cumilla">Rangpur</option>
-                </select>
-                <img
-                  src="./images/arrow-down.png"
-                  height="8px"
-                  alt="Dropdown arrow"
-                  style="margin-right: 4px"
-                />
-              </div>
+          <div class="location form-group">
+            <label for="location">Location <span class="optional-text">(optional)</span></label>
+            <div class="form-control d-flex justify-between items-center">
+              <select type="text" id="location" name="location" placeholder="Select Location">
+                <option>Select Location</option>
+                <option value="dhaka">Dhaka</option>
+                <option value="cumilla">Cumilla</option>
+                <option value="cumilla">Chottogram</option>
+                <option value="cumilla">Shylet</option>
+                <option value="cumilla">Rangpur</option>
+              </select>
+              <img src="./images/arrow-down.png" height="8px" alt="Dropdown arrow" style="margin-right: 4px" />
             </div>
+          </div>
 
-            <div class="form-group">
-              <button type="submit" class="btn-primary">Sign Up</button>
-              <div class="d-flex items-center justify-center form-footer">
-                <span>Already a user?</span>
-                <a href="./login.html">Login</a>
-              </div>
+          <div class="form-group">
+            <button type="submit" class="btn-primary">Sign Up</button>
+            <div class="d-flex items-center justify-center form-footer">
+              <span>Already a user?</span>
+              <a href="./login.html">Login</a>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
+    </div>
 
-      <!-- Right Side Text -->
-      <div class="sign-up-text-container">
-        <nav class="auth-nav">
-          <a href="/">Home</a>
-          <a href="/">Contact</a>
-        </nav>
-        <p class="quote">
-          “Join Aqua Mate Empower your pond let technology take care of your
-          hatchery.”
-        </p>
-      </div>
-    </main>
+    <!-- Right Side Text -->
+    <div class="sign-up-text-container">
+      <nav class="auth-nav">
+        <a href="./index.html">Home</a>
+        <a href="./dashboard.html">Contact</a>
+      </nav>
+      <p class="quote">
+        “Join Aqua Mate Empower your pond let technology take care of your
+        hatchery.”
+      </p>
+    </div>
+  </main>
 
-    <!-- script -->
-    <script src="./scripts/script.js"></script>
-  </body>
+  <!-- script -->
+  <script src="./scripts/script.js"></script>
+</body>
+
 </html>
