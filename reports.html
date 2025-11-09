@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Mate - Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/0b5415b146.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-white font-sans">
+    <!-- 🟦 Top Bar -->
+    <header class="bg-[#4e47ff0d] text-white px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="./images/logo.png" class="w-28 h-20 rounded-full " alt="">
+            <h1 class="text-2xl font-bold text-gray-900">Aqua Mate</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <select class="bg-white text-gray-500 px-5 py-2 rounded">
+                <option>Hatchery 1</option>
+                <option>Hatchery 2</option>
+            </select>
+            <span id="time" class="text-sm text-gray-500"></span>
+            <img src="./images/Avatar.png" class="w-8 h-8 bg-white rounded-full p-1" alt="Profile">
+            <h1 class="text-xl font-bold text-gray-900">Motin Kaka</h1>
+        </div>
+    </header>
+    <hr>
+    <hr>
+
+    <!-- 🧭 Sidebar + Main Layout -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <nav class="bg-[#4e47ff0d] text-gray-700 font-medium w-52 h-screen pt-5 space-y-4">
+            <a href="index.html" class="block py-2 px-5 rounded hover:bg-white">
+                Dashboard <i class="fa-solid fa-house ml-2"></i>
+            </a>
+            <hr>
+            <a href="reports.html" class="block py-2 px-5 rounded bg-white text-blue-600">
+                Water Reports <i class="fa-solid fa-chart-simple ml-2"></i>
+            </a>
+            <hr>
+            <a href="alerts.html" class="block py-2 px-5 rounded hover:bg-white">
+                Alerts <i class="fa-solid fa-bell ml-2"></i>
+            </a>
+            <hr>
+            <a href="settings.html" class="block py-2 px-5 rounded hover:bg-white">
+                Settings <i class="fa-solid fa-gear ml-2"></i>
+            </a>
+            <hr>
+            <a href="logout.html" class="block py-2 px-5 rounded hover:bg-white">
+                Logout <i class="fa-solid fa-right-from-bracket ml-2"></i>
+            </a>
+            <hr>
+        </nav>
+
+        <!-- 📊 Reports Section -->
+        <main class="flex-1 p-8">
+            <h2 class="text-xl font-semibold mb-6">Search Reports by Date</h2>
+
+            <!-- Filter Section -->
+            <div class="flex flex-col md:flex-row gap-4 mb-6">
+                <input type="date" class="border rounded px-4 py-2 w-full md:w-1/3">
+                <select class="border rounded px-4 py-2 w-full md:w-1/3">
+                    <option>All Hatcheries</option>
+                    <option>Hatchery 1</option>
+                    <option>Hatchery 2</option>
+                </select>
+                <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">
+                    <i class="fa-solid fa-filter mr-2"></i>Filter
+                </button>
+            </div>
+
+            <!-- Report Cards Grid -->
+            <main class="flex-1 p-8">
+                <h2 class="text-xl font-semibold mb-6">Water Quality Reports</h2>
+
+                <!-- Report Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Temperature Report -->
+                    <div
+                        class="bg-white shadow rounded-xl p-5 duration-300 ease-in-out transform hover:scale-110 hover:bg-white">
+                        <h3 class="font-semibold text-lg text-gray-700 flex justify-between">
+                            Water Temperature <i class="fa-solid fa-temperature-half text-blue-500"></i>
+                        </h3>
+                        <p class="text-sm text-gray-500 mt-1">Last 7 days average: <span
+                                class="font-semibold text-gray-800">27.3°C</span></p>
+                        <canvas id="tempChart" class="mt-4"></canvas>
+                    </div>
+
+                    <!-- pH Report -->
+                    <div
+                        class="bg-white shadow rounded-xl p-5 duration-300 ease-in-out transform hover:scale-110 hover:bg-white">
+                        <h3 class="font-semibold text-lg text-gray-700 flex justify-between">
+                            pH Level <i class="fa-solid fa-flask text-green-500"></i>
+                        </h3>
+                        <p class="text-sm text-gray-500 mt-1">Last 7 days average: <span
+                                class="font-semibold text-gray-800">7.1</span></p>
+                        <canvas id="phChart" class="mt-4"></canvas>
+                    </div>
+
+                    <!-- Water Turbidity -->
+                    <div
+                        class="bg-white shadow rounded-xl p-5 duration-300 ease-in-out transform hover:scale-110 hover:bg-white">
+                        <h3 class="font-semibold text-lg text-gray-700 flex justify-between">
+                            Water Turbidity <i class="fa-solid fa-water text-blue-400"></i>
+                        </h3>
+                        <p class="text-sm text-gray-500 mt-1">Last 7 days average: <span
+                                class="font-semibold text-gray-800">13
+                                NTU</span></p>
+                        <canvas id="oxygenChart" class="mt-4"></canvas>
+                    </div>
+                </div>
+            </main>
+    </div>
+
+    <!-- Data Table -->
+    <div class="mt-10 bg-white rounded-xl shadow p-5 overflow-x-auto">
+        <h3 class="font-bold text-lg mb-4 text-center">Recent Readings</h3>
+        <table class="min-w-full text-left border border-gray-200">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="px-4 py-2 border">Date</th>
+                    <th class="px-4 py-2 border">Temperature (°C)</th>
+                    <th class="px-4 py-2 border">pH</th>
+                    <th class="px-4 py-2 border">Water Turbidity (NTU)</th>
+                    <th class="px-4 py-2 border">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="px-4 py-2 border">2025-11-07</td>
+                    <td class="px-4 py-2 border">27.1</td>
+                    <td class="px-4 py-2 border">7.3</td>
+                    <td class="px-4 py-2 border">5</td>
+                    <td class="px-4 py-2 border text-green-600 font-medium">Good</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="px-4 py-2 border">2025-11-06</td>
+                    <td class="px-4 py-2 border">28.0</td>
+                    <td class="px-4 py-2 border">7.5</td>
+                    <td class="px-4 py-2 border">8</td>
+                    <td class="px-4 py-2 border text-yellow-600 font-medium">Moderate</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-2 border">2025-11-05</td>
+                    <td class="px-4 py-2 border">26.9</td>
+                    <td class="px-4 py-2 border">7.0</td>
+                    <td class="px-4 py-2 border">9.7</td>
+                    <td class="px-4 py-2 border text-green-600 font-medium">Good</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#4e47ff0d] border-gray-200 py-10 mt-10">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10">
+
+            <!-- Left Column -->
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1">
+                <img src="./images/logo.png" alt="Aqua Mate Logo" class="w-[180px] mb-4" />
+                <p class="text-gray-500 text-sm leading-relaxed max-w-md">
+                    Your trusted partner in smarter, sustainable aquaculture helping
+                    farmers protect their ponds, nurture healthier fish, and build a
+                    better tomorrow.
+                </p>
+            </div>
+
+            <!-- Divider Column -->
+            <div class="hidden lg:flex flex-1 flex-row items-center justify-center gap-[24px]">
+                <div class="w-[1px] h-[180px] bg-gray-400"></div>
+                <div class="w-[1px] h-[220px] bg-black"></div>
+                <div class="w-[1px] h-[180px] bg-gray-400"></div>
+            </div>
+
+            <!-- Right Column -->
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-16 gap-y-3 text-gray-500 text-sm text-center lg:text-left flex-1">
+                <a href="#" class="hover:text-[#1a2b5b] transition">Home</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">Features</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">About Us</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">Pricing</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">Blog</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">Privacy Policy</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">FAQ</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">Terms of Service</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">Contact Us</a>
+                <a href="#" class="hover:text-[#1a2b5b] transition">Help Center</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Script for live time -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById("time").textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+    <script>
+        const labels = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'];
+
+        // 🌡️ Temperature Chart
+        new Chart(document.getElementById('tempChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: [26.5, 27, 28, 27.5, 26.8, 27.3, 27.1],
+                    borderColor: '#3b82f6',
+                    backgroundColor: '#93c5fd50',
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#2563eb'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: false }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // ⚗️ pH Chart
+        new Chart(document.getElementById('phChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'pH Level',
+                    data: [7.0, 7.2, 7.3, 7.1, 7.4, 7.2, 7.1],
+                    borderColor: '#22c55e',
+                    backgroundColor: '#bbf7d050',
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#16a34a'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: false }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // 💧 Oxygen Chart
+        new Chart(document.getElementById('oxygenChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Oxygen (mg/L)',
+                    data: [6.2, 6.0, 6.3, 6.4, 6.1, 6.0, 5.9],
+                    borderColor: '#38bdf8',
+                    backgroundColor: '#bae6fd50',
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#0ea5e9'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: false }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+
+</html>
