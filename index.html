@@ -108,17 +108,33 @@
       </div>
     </section>
 
-    <!-- aqua mate demo section  -->
-    <section class="bg-[#e5e4f880] mb-[16px] flex justify-center">
-      <div class="max-md:mx-4">
+    <!-- aqua mate demo section -->
+    <section class="bg-[#e5e4f880] mb-[16px] flex justify-center py-10">
+      <div class="flex flex-col md:flex-row items-center gap-10 max-md:mx-4">
+        <!-- VIDEO LEFT -->
         <video
           src="./videos/demo.mp4"
           autoplay
           muted
           loop
           playsinline
-          class="w-[500px] h-[700px] md:w-[600px] md:h-[850px] rounded-lg object-contain -rotate-90"
+          class="w-[500px] h-[700px] md:w-[350px] md:h-[500px] rounded-lg object-contain -rotate-90"
         ></video>
+
+        <!-- SLIDESHOW RIGHT -->
+        <div
+          class="relative w-[320px] h-[220px] md:w-[400px] md:h-[280px] overflow-hidden rounded-xl shadow-lg"
+        >
+          <div
+            id="slider"
+            class="w-full h-full flex transition-all duration-700"
+          >
+            <img
+              src="./images/demo-aquamate.jpeg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -635,5 +651,8 @@
         </div>
       </div>
     </footer>
+
+    <!-- javascript file  -->
+    <script src="./script/index.js"></script>
   </body>
 </html>
