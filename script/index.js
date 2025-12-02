@@ -1,3 +1,4 @@
+//for slideshow
 let index = 0;
 const slider = document.getElementById("slider");
 const total = slider.children.length;
