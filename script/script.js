@@ -77,9 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
           // Save JWT token + user info
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
-
           alert("Login successful!");
-          window.location.href = "dashboard.html"; // redirect
+          window.location.href = "dashboard.html";
         } else {
           alert(data.message);
         }
@@ -90,21 +89,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ================= DASHBOARD USER NAME & LOGOUT =================
+  // ================= DASHBOARD ACCESS =================
   if (window.location.pathname.includes("dashboard.html")) {
+    const token = localStorage.getItem("token");
     const user = JSON.parse(localStorage.getItem("user"));
 
-    if (!user) {
+    if (!token || !user) {
       alert("Please login first!");
-      window.location.href = "login.html";
+      window.location.href = "index.html"; // redirect to index
     } else {
-      // Update user name in top bar
+      // Display username
       const userNameElement = document.querySelector(
         "header h1.text-xl.font-bold.text-gray-900"
       );
       if (userNameElement) {
-        userNameElement.textContent = user.fullName;
+        userNameElement.textContent = `${user.fullName}`;
       }
+
+      // Fetch protected dashboard data
+      fetch("http://localhost:5000/api/dashboard", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Unauthorized");
+          return res.json();
+        })
+        .then((data) => {
+          const contentEl = document.getElementById("dashboard-content");
+          if (contentEl) {
+            contentEl.innerHTML = ""; // clear previous content
+            data.data.forEach((sensor) => {
+              const card = document.createElement("div");
+              card.className =
+                "bg-white rounded-xl shadow-lg drop-shadow-lg p-5 text-center duration-300 ease-in-out transform hover:scale-110 hover:bg-[#4e47ff0d]";
+              card.innerHTML = `
+                <h3 class="text-lg font-bold">${sensor.sensor}</h3>
+                <p class="text-2xl font-semibold mt-2">${sensor.value}</p>
+                <p class="text-sm text-gray-500">Ideal: ${sensor.ideal}</p>
+              `;
+              contentEl.appendChild(card);
+            });
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+          window.location.href = "index.html"; // redirect after error
+        });
 
       // Logout
       const logoutLink = document.querySelector('nav a[href="./index.html"]');
@@ -113,9 +145,18 @@ document.addEventListener("DOMContentLoaded", () => {
           e.preventDefault();
           localStorage.removeItem("token");
           localStorage.removeItem("user");
-          window.location.href = "login.html";
+          window.location.href = "index.html"; // redirect to index
         });
       }
     }
   }
+
+  // ================= LIVE TIME =================
+  function updateTime() {
+    const now = new Date();
+    const timeEl = document.getElementById("time");
+    if (timeEl) timeEl.textContent = now.toLocaleTimeString();
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
 });
