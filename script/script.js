@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const API_BASE = "http://localhost:5000"; // ✅ BACKEND BASE URL
+
   // ================= PASSWORD TOGGLE =================
   const passwordImg = document.getElementById("password-img");
   if (passwordImg) {
@@ -26,22 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value.trim();
       const location = document.getElementById("location").value;
 
-      const data = { fullName, email, phone, password, location };
-
       try {
-        const res = await fetch("http://localhost:5000/api/auth/signup", {
+        const res = await fetch(`${API_BASE}/api/auth/signup`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
+          body: JSON.stringify({
+            fullName,
+            email,
+            phone,
+            password,
+            location,
+          }),
         });
 
-        const result = await res.json();
+        const data = await res.json();
 
         if (res.status === 201) {
           alert("Signup successful! Please login.");
           window.location.href = "login.html";
         } else {
-          alert(result.message);
+          alert(data.message || "Signup failed");
         }
       } catch (err) {
         console.error(err);
@@ -65,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch(`${API_BASE}/api/auth/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
@@ -74,13 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await res.json();
 
         if (res.ok) {
-          // Save JWT token + user info
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
-          alert("Login successful!");
           window.location.href = "dashboard.html";
         } else {
-          alert(data.message);
+          alert(data.message || "Login failed");
         }
       } catch (err) {
         console.error(err);
@@ -89,65 +93,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ================= DASHBOARD ACCESS =================
-  if (window.location.pathname.includes("dashboard.html")) {
+  // ================= PROTECTED PAGES =================
+  const protectedPages = [
+    "dashboard.html",
+    "reports.html",
+    "alerts.html",
+    "setting.html",
+  ];
+
+  const currentPage = window.location.pathname.split("/").pop();
+
+  if (protectedPages.includes(currentPage)) {
     const token = localStorage.getItem("token");
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (!token || !user) {
-      alert("Please login first!");
-      window.location.href = "index.html"; // redirect to index
-    } else {
-      // Display username
-      const userNameElement = document.querySelector(
-        "header h1.text-xl.font-bold.text-gray-900"
-      );
-      if (userNameElement) {
-        userNameElement.textContent = `${user.fullName}`;
-      }
+      window.location.href = "login.html";
+      return;
+    }
 
-      // Fetch protected dashboard data
-      fetch("http://localhost:5000/api/dashboard", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-        .then((res) => {
-          if (!res.ok) throw new Error("Unauthorized");
-          return res.json();
-        })
-        .then((data) => {
-          const contentEl = document.getElementById("dashboard-content");
-          if (contentEl) {
-            contentEl.innerHTML = ""; // clear previous content
-            data.data.forEach((sensor) => {
-              const card = document.createElement("div");
-              card.className =
-                "bg-white rounded-xl shadow-lg drop-shadow-lg p-5 text-center duration-300 ease-in-out transform hover:scale-110 hover:bg-[#4e47ff0d]";
-              card.innerHTML = `
-                <h3 class="text-lg font-bold">${sensor.sensor}</h3>
-                <p class="text-2xl font-semibold mt-2">${sensor.value}</p>
-                <p class="text-sm text-gray-500">Ideal: ${sensor.ideal}</p>
-              `;
-              contentEl.appendChild(card);
-            });
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-          window.location.href = "index.html"; // redirect after error
-        });
+    // ✅ USER NAME UPDATE (ALL DASHBOARD PAGES)
+    const userNameElement = document.getElementById("username");
+    if (userNameElement) {
+      userNameElement.textContent = user.fullName;
+    }
 
-      // Logout
-      const logoutLink = document.querySelector('nav a[href="./index.html"]');
-      if (logoutLink) {
-        logoutLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-          window.location.href = "index.html"; // redirect to index
-        });
-      }
+    // Logout
+    const logoutLink = document.querySelector('nav a[href="./index.html"]');
+    if (logoutLink) {
+      logoutLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.clear();
+        window.location.href = "index.html";
+      });
     }
   }
 
