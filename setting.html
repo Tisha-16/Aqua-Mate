@@ -1,234 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aqua Mate Settings</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/0b5415b146.js" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://kit.fontawesome.com/0b5415b146.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body class="bg-white font-sans">
+  <body class="bg-white font-sans">
     <!-- 🟦 Top Bar -->
-    <header class="bg-[#4e47ff0d] text-white px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="./images/logo.png" class="w-28 h-20 rounded-full " alt="">
-            <h1 class="text-2xl font-bold text-gray-900">Aqua Mate</h1>
-        </div>
-        <div class="flex items-center gap-4">
-            <select class="bg-white text-gray-500 px-5 py-2 rounded">
-                <option>Hatchery 1</option>
-                <option>Hatchery 2</option>
-            </select>
-            <span id="time" class="text-sm text-gray-500"></span>
-            <img src="./images/Avatar.png" class="w-8 h-8 bg-white rounded-full p-1" alt="Profile">
-            <h1 class="text-xl font-bold text-gray-900">Motin Kaka</h1>
-        </div>
+    <header
+      class="bg-[#4e47ff0d] text-white px-6 py-3 flex justify-between items-center"
+    >
+      <div class="flex items-center">
+        <img src="./images/logo.png" class="w-28 h-20 rounded-full" alt="" />
+        <h1 class="text-2xl font-bold text-gray-900">Aqua Mate</h1>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <select class="bg-white text-gray-500 px-5 py-2 rounded">
+          <option>Hatchery 1</option>
+          <option>Hatchery 2</option>
+        </select>
+
+        <span id="time" class="text-sm text-gray-500"></span>
+
+        <img
+          src="./images/Avatar.png"
+          class="w-8 h-8 bg-white rounded-full p-1"
+          alt="Profile"
+        />
+
+        <!-- ✅ USER NAME -->
+        <h1 id="username" class="text-xl font-bold text-gray-900"></h1>
+      </div>
     </header>
-    <hr>
-    <hr>
+
+    <hr />
+    <hr />
 
     <!-- 🧭 Sidebar + Main Content Layout -->
     <div class="flex">
-        <!-- Sidebar -->
-        <nav class="bg-[#4e47ff0d] text-gray-700 font-medium w-52 h-screen pt-5 space-y-4">
-            <a href="index.html" class="block py-2 px-5 rounded hover:bg-white">Dashboard <i
-                    class="fa-solid fa-house ml-1"></i></a>
-            <hr>
-            <a href="reports.html" class="block py-2 px-5 rounded hover:bg-white">Water Reports <i
-                    class="fa-solid fa-chart-simple ml-1"></i></a>
-            <hr>
-            <a href="alerts.html" class="block py-2 px-5 rounded hover:bg-white">Alerts <i
-                    class="fa-solid fa-bell ml-1"></i></a>
-            <hr>
-            <a href="settings.html" class="block py-2 px-5 rounded bg-white">Settings <i
-                    class="fa-solid fa-gear ml-1"></i></a>
-            <hr>
-            <a href="./index.html" class="block py-2 px-5 rounded hover:bg-white">Logout <i
-                    class="fa-solid fa-right-from-bracket ml-1"></i></a>
-            <hr>
-        </nav>
+      <!-- Sidebar -->
+      <nav
+        class="bg-[#4e47ff0d] text-gray-700 font-medium w-52 h-screen pt-5 space-y-4"
+      >
+        <a href="index.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Dashboard <i class="fa-solid fa-house ml-1"></i
+        ></a>
+        <hr />
+        <a href="reports.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Water Reports <i class="fa-solid fa-chart-simple ml-1"></i
+        ></a>
+        <hr />
+        <a href="alerts.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Alerts <i class="fa-solid fa-bell ml-1"></i
+        ></a>
+        <hr />
+        <a href="setting.html" class="block py-2 px-5 rounded bg-white"
+          >Settings <i class="fa-solid fa-gear ml-1"></i
+        ></a>
+        <hr />
+        <a href="./index.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Logout <i class="fa-solid fa-right-from-bracket ml-1"></i
+        ></a>
+        <hr />
+      </nav>
 
-        <!-- 🧠 Main Settings Section -->
-        <main class="flex-1 p-8">
-            <h2 class="text-xl font-semibold mb-6">Account & System Settings</h2>
+      <!-- 🧠 Main Settings Section -->
+      <main class="flex-1 p-8">
+        <h2 class="text-xl font-semibold mb-6">Account & System Settings</h2>
 
-            <!-- Profile Settings -->
-            <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
-                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-user text-blue-600"></i> Profile Settings
-                </h3>
-                <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Full Name</label>
-                        <input type="text"
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                            value="Motin Kaka">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Email Address</label>
-                        <input type="email"
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                            value="motin@example.com">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Phone Number</label>
-                        <input type="text"
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                            value="+8801712345678">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Hatchery Name</label>
-                        <input type="text"
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                            value="Blue Water Hatchery">
-                    </div>
-                    <div class="col-span-full text-right mt-4">
-                        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Save
-                            Changes</button>
-                    </div>
-                </form>
-            </section>
+        <!-- Profile Settings -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+          <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-user text-blue-600"></i> Profile Settings
+          </h3>
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+                value="Motin Kaka"
+              />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+                value="motin@example.com"
+              />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+                value="+8801712345678"
+              />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Hatchery Name</label
+              >
+              <input
+                type="text"
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+                value="Blue Water Hatchery"
+              />
+            </div>
+            <div class="col-span-full text-right mt-4">
+              <button
+                type="submit"
+                class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+              >
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </section>
 
-            <!-- 🔒 Change Password -->
-            <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
-                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-lock text-purple-600"></i> Change Password
-                </h3>
-                <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Current Password</label>
-                        <input type="password" placeholder="Enter current password"
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">New Password</label>
-                        <input type="password" placeholder="Enter new password"
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Confirm New Password</label>
-                        <input type="password" placeholder="Re-enter new password"
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200">
-                    </div>
-                    <div class="col-span-full text-right mt-4">
-                        <button type="submit"
-                            class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">Update
-                            Password</button>
-                    </div>
-                </form>
-            </section>
+        <!-- 🔒 Change Password -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+          <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-lock text-purple-600"></i> Change Password
+          </h3>
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Current Password</label
+              >
+              <input
+                type="password"
+                placeholder="Enter current password"
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200"
+              />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >New Password</label
+              >
+              <input
+                type="password"
+                placeholder="Enter new password"
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200"
+              />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Confirm New Password</label
+              >
+              <input
+                type="password"
+                placeholder="Re-enter new password"
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200"
+              />
+            </div>
+            <div class="col-span-full text-right mt-4">
+              <button
+                type="submit"
+                class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700"
+              >
+                Update Password
+              </button>
+            </div>
+          </form>
+        </section>
 
-            <!-- Notification Settings -->
-            <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
-                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-bell text-yellow-500"></i> Notification Preferences
-                </h3>
-                <div class="space-y-3">
-                    <label class="flex items-center justify-between">
-                        <span class="text-gray-700">Temperature Alerts</span>
-                        <input type="checkbox" checked class="w-5 h-5 accent-blue-600">
-                    </label>
-                    <label class="flex items-center justify-between">
-                        <span class="text-gray-700">pH Level Alerts</span>
-                        <input type="checkbox" checked class="w-5 h-5 accent-blue-600">
-                    </label>
-                    <label class="flex items-center justify-between">
-                        <span class="text-gray-700">Water Turbidity Alerts</span>
-                        <input type="checkbox" class="w-5 h-5 accent-blue-600">
-                    </label>
-                    <label class="flex items-center justify-between">
-                        <span class="text-gray-700">Email Notifications</span>
-                        <input type="checkbox" checked class="w-5 h-5 accent-blue-600">
-                    </label>
-                </div>
-                <div class="text-right mt-4">
-                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Update
-                        Preferences</button>
-                </div>
-            </section>
+        <!-- Notification Settings -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+          <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-bell text-yellow-500"></i> Notification
+            Preferences
+          </h3>
+          <div class="space-y-3">
+            <label class="flex items-center justify-between">
+              <span class="text-gray-700">Temperature Alerts</span>
+              <input type="checkbox" checked class="w-5 h-5 accent-blue-600" />
+            </label>
+            <label class="flex items-center justify-between">
+              <span class="text-gray-700">pH Level Alerts</span>
+              <input type="checkbox" checked class="w-5 h-5 accent-blue-600" />
+            </label>
+            <label class="flex items-center justify-between">
+              <span class="text-gray-700">Water Turbidity Alerts</span>
+              <input type="checkbox" class="w-5 h-5 accent-blue-600" />
+            </label>
+            <label class="flex items-center justify-between">
+              <span class="text-gray-700">Email Notifications</span>
+              <input type="checkbox" checked class="w-5 h-5 accent-blue-600" />
+            </label>
+          </div>
+          <div class="text-right mt-4">
+            <button
+              class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+            >
+              Update Preferences
+            </button>
+          </div>
+        </section>
 
-            <!-- System Settings -->
-            <section class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-sliders text-green-500"></i> System Settings
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Temperature Unit</label>
-                        <select
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200">
-                            <option>°C (Celsius)</option>
-                            <option>°F (Fahrenheit)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Language</label>
-                        <select
-                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200">
-                            <option>English</option>
-                            <option>বাংলা</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="text-right mt-4">
-                    <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">Save System
-                        Settings</button>
-                </div>
-            </section>
-        </main>
+        <!-- System Settings -->
+        <section class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-sliders text-green-500"></i> System Settings
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Temperature Unit</label
+              >
+              <select
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+              >
+                <option>°C (Celsius)</option>
+                <option>°F (Fahrenheit)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Language</label
+              >
+              <select
+                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+              >
+                <option>English</option>
+                <option>বাংলা</option>
+              </select>
+            </div>
+          </div>
+          <div class="text-right mt-4">
+            <button
+              class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
+            >
+              Save System Settings
+            </button>
+          </div>
+        </section>
+      </main>
     </div>
 
     <!-- Footer -->
     <footer class="bg-[#4e47ff0d] border-gray-200 py-10">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10"
+      >
+        <!-- Left Column -->
         <div
-            class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10">
-
-            <!-- Left Column -->
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1">
-                <img src="./images/logo.png" alt="Aqua Mate Logo" class="w-[180px] mb-4" />
-                <p class="text-gray-500 text-sm leading-relaxed max-w-md">
-                    Your trusted partner in smarter, sustainable aquaculture helping
-                    farmers protect their ponds, nurture healthier fish, and build a
-                    better tomorrow.
-                </p>
-            </div>
-
-            <!-- Divider Column -->
-            <div class="hidden lg:flex flex-1 flex-row items-center justify-center gap-[24px]">
-                <div class="w-[1px] h-[180px] bg-gray-400"></div>
-                <div class="w-[1px] h-[220px] bg-black"></div>
-                <div class="w-[1px] h-[180px] bg-gray-400"></div>
-            </div>
-
-            <!-- Right Column -->
-            <div
-                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-16 gap-y-3 text-gray-500 text-sm text-center lg:text-left flex-1">
-                <a href="#" class="hover:text-[#1a2b5b] transition">Home</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Features</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">About Us</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Pricing</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Blog</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Privacy Policy</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">FAQ</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Terms of Service</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Contact Us</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Help Center</a>
-            </div>
-
+          class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1"
+        >
+          <img
+            src="./images/logo.png"
+            alt="Aqua Mate Logo"
+            class="w-[180px] mb-4"
+          />
+          <p class="text-gray-500 text-sm leading-relaxed max-w-md">
+            Your trusted partner in smarter, sustainable aquaculture helping
+            farmers protect their ponds, nurture healthier fish, and build a
+            better tomorrow.
+          </p>
         </div>
+
+        <!-- Divider Column -->
+        <div
+          class="hidden lg:flex flex-1 flex-row items-center justify-center gap-[24px]"
+        >
+          <div class="w-[1px] h-[180px] bg-gray-400"></div>
+          <div class="w-[1px] h-[220px] bg-black"></div>
+          <div class="w-[1px] h-[180px] bg-gray-400"></div>
+        </div>
+
+        <!-- Right Column -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-16 gap-y-3 text-gray-500 text-sm text-center lg:text-left flex-1"
+        >
+          <a href="#" class="hover:text-[#1a2b5b] transition">Home</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Features</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">About Us</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Pricing</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Blog</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Privacy Policy</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">FAQ</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition"
+            >Terms of Service</a
+          >
+          <a href="#" class="hover:text-[#1a2b5b] transition">Contact Us</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Help Center</a>
+        </div>
+      </div>
     </footer>
 
     <!-- Script for live time -->
     <script>
-        function updateTime() {
-            const now = new Date();
-            document.getElementById("time").textContent = now.toLocaleTimeString();
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
+      function updateTime() {
+        const now = new Date();
+        document.getElementById("time").textContent = now.toLocaleTimeString();
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
     </script>
-</body>
 
+    <script src="./script/script.js"></script>
+  </body>
 </html>

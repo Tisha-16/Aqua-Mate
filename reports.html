@@ -12,21 +12,35 @@
 
 <body class="bg-white font-sans">
     <!-- 🟦 Top Bar -->
-    <header class="bg-[#4e47ff0d] text-white px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="./images/logo.png" class="w-28 h-20 rounded-full " alt="">
-            <h1 class="text-2xl font-bold text-gray-900">Aqua Mate</h1>
-        </div>
-        <div class="flex items-center gap-4">
-            <select class="bg-white text-gray-500 px-5 py-2 rounded">
-                <option>Hatchery 1</option>
-                <option>Hatchery 2</option>
-            </select>
-            <span id="time" class="text-sm text-gray-500"></span>
-            <img src="./images/Avatar.png" class="w-8 h-8 bg-white rounded-full p-1" alt="Profile">
-            <h1 class="text-xl font-bold text-gray-900">Motin Kaka</h1>
-        </div>
-    </header>
+    <header
+  class="bg-[#4e47ff0d] text-white px-6 py-3 flex justify-between items-center">
+  <div class="flex items-center">
+    <img src="./images/logo.png" class="w-28 h-20 rounded-full" alt="" />
+    <h1 class="text-2xl font-bold text-gray-900">Aqua Mate</h1>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <select class="bg-white text-gray-500 px-5 py-2 rounded">
+      <option>Hatchery 1</option>
+      <option>Hatchery 2</option>
+    </select>
+
+    <span id="time" class="text-sm text-gray-500"></span>
+
+    <img
+      src="./images/Avatar.png"
+      class="w-8 h-8 bg-white rounded-full p-1"
+      alt="Profile"
+    />
+
+    <!-- ✅ USER NAME -->
+    <h1
+      id="username"
+      class="text-xl font-bold text-gray-900"
+    ></h1>
+  </div>
+</header>
+
     <hr>
     <hr>
 
@@ -34,7 +48,7 @@
     <div class="flex">
         <!-- Sidebar -->
         <nav class="bg-[#4e47ff0d] text-gray-700 font-medium w-52 h-screen pt-5 space-y-4">
-            <a href="index.html" class="block py-2 px-5 rounded hover:bg-white">
+            <a href="dashboard.html" class="block py-2 px-5 rounded hover:bg-white">
                 Dashboard <i class="fa-solid fa-house ml-2"></i>
             </a>
             <hr>
@@ -46,7 +60,7 @@
                 Alerts <i class="fa-solid fa-bell ml-2"></i>
             </a>
             <hr>
-            <a href="settings.html" class="block py-2 px-5 rounded hover:bg-white">
+            <a href="setting.html" class="block py-2 px-5 rounded hover:bg-white">
                 Settings <i class="fa-solid fa-gear ml-2"></i>
             </a>
             <hr>
@@ -284,6 +298,8 @@
             }
         });
     </script>
+
+     <script src="./script/script.js"></script>
 </body>
 
 </html>

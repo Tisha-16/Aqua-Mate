@@ -1,179 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aqua Mate Alerts</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/0b5415b146.js" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://kit.fontawesome.com/0b5415b146.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body class="bg-white font-sans">
+  <body class="bg-white font-sans">
     <!-- 🟦 Top Bar -->
-    <header class="bg-[#4e47ff0d] text-white px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="./images/logo.png" class="w-28 h-20 rounded-full " alt="">
-            <h1 class="text-2xl font-bold text-gray-900">Aqua Mate</h1>
-        </div>
-        <div class="flex items-center gap-4">
-            <select class="bg-white text-gray-500 px-5 py-2 rounded">
-                <option>Hatchery 1</option>
-                <option>Hatchery 2</option>
-            </select>
-            <span id="time" class="text-sm text-gray-500"></span>
-            <img src="./images/Avatar.png" class="w-8 h-8 bg-white rounded-full p-1" alt="Profile">
-            <h1 class="text-xl font-bold text-gray-900">Motin Kaka</h1>
-        </div>
+    <header
+      class="bg-[#4e47ff0d] text-white px-6 py-3 flex justify-between items-center"
+    >
+      <div class="flex items-center">
+        <img src="./images/logo.png" class="w-28 h-20 rounded-full" alt="" />
+        <h1 class="text-2xl font-bold text-gray-900">Aqua Mate</h1>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <select class="bg-white text-gray-500 px-5 py-2 rounded">
+          <option>Hatchery 1</option>
+          <option>Hatchery 2</option>
+        </select>
+
+        <span id="time" class="text-sm text-gray-500"></span>
+
+        <img
+          src="./images/Avatar.png"
+          class="w-8 h-8 bg-white rounded-full p-1"
+          alt="Profile"
+        />
+
+        <!-- ✅ USER NAME -->
+        <h1 id="username" class="text-xl font-bold text-gray-900"></h1>
+      </div>
     </header>
-    <hr>
-    <hr>
+
+    <hr />
+    <hr />
 
     <!-- 🧭 Sidebar + Main Content Layout -->
     <div class="flex">
-        <!-- Sidebar -->
-        <nav class="bg-[#4e47ff0d] text-gray-700 font-medium w-52 h-screen pt-5 space-y-4">
-            <a href="index.html" class="block py-2 px-5 rounded hover:bg-white">Dashboard <span><i
-                        class="fa-solid fa-house"></i></span></a>
-            <hr>
-            <a href="reports.html" class="block py-2 px-5 rounded hover:bg-white">Water Reports <span><i
-                        class="fa-solid fa-chart-simple"></i></span></a>
-            <hr>
-            <a href="alerts.html" class="block py-2 px-5 rounded bg-white text-blue-600 font-semibold">Alerts <span><i
-                        class="fa-solid fa-bell"></i></span></a>
-            <hr>
-            <a href="settings.html" class="block py-2 px-5 rounded hover:bg-white">Settings <span><i
-                        class="fa-solid fa-gear"></i></span></a>
-            <hr>
-            <a href="./index.html" class="block py-2 px-5 rounded hover:bg-white">Logout <span><i
-                        class="fa-solid fa-right-from-bracket"></i></span></a>
-            <hr>
-        </nav>
+      <!-- Sidebar -->
+      <nav
+        class="bg-[#4e47ff0d] text-gray-700 font-medium w-52 h-screen pt-5 space-y-4"
+      >
+        <a href="dashboard.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Dashboard <span><i class="fa-solid fa-house"></i></span
+        ></a>
+        <hr />
+        <a href="reports.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Water Reports <span><i class="fa-solid fa-chart-simple"></i></span
+        ></a>
+        <hr />
+        <a
+          href="alerts.html"
+          class="block py-2 px-5 rounded bg-white text-blue-600 font-semibold"
+          >Alerts <span><i class="fa-solid fa-bell"></i></span
+        ></a>
+        <hr />
+        <a href="setting.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Settings <span><i class="fa-solid fa-gear"></i></span
+        ></a>
+        <hr />
+        <a href="./index.html" class="block py-2 px-5 rounded hover:bg-white"
+          >Logout <span><i class="fa-solid fa-right-from-bracket"></i></span
+        ></a>
+        <hr />
+      </nav>
 
-        <!-- 📊 Main Content -->
-        <main class="flex-1 p-8">
-            <h2 class="text-xl font-semibold mb-6">System Alerts</h2>
+      <!-- 📊 Main Content -->
+      <main class="flex-1 p-8">
+        <h2 class="text-xl font-semibold mb-6">System Alerts</h2>
 
-            <!-- Filters -->
-            <div class="flex flex-wrap gap-3 mb-6">
-                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm">All</button>
-                <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">Critical</button>
-                <button class="bg-yellow-400 text-white px-4 py-2 rounded-lg text-sm">Warning</button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm">Resolved</button>
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm">
+            All
+          </button>
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">
+            Critical
+          </button>
+          <button class="bg-yellow-400 text-white px-4 py-2 rounded-lg text-sm">
+            Warning
+          </button>
+          <button class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm">
+            Resolved
+          </button>
+        </div>
+
+        <!-- Alerts List -->
+        <div class="space-y-4">
+          <!-- Critical Alert -->
+          <div
+            class="bg-white shadow-lg rounded-xl p-5 border-l-4 border-red-600 duration-300 ease-in-out transform hover:scale-105 hover:bg-white"
+          >
+            <div class="flex justify-between items-center">
+              <div class="flex items-start gap-4">
+                <i
+                  class="fa-solid fa-triangle-exclamation text-red-500 text-2xl"
+                ></i>
+                <div>
+                  <h3 class="font-bold text-gray-800">
+                    Water Turbidity is Low
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Current NTU:
+                    <span class="font-semibold">27 NTU</span> (higher than safe
+                    range)
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">Detected: 3 mins ago</p>
+                </div>
+              </div>
+              <button
+                class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-600 transition"
+              >
+                Acknowledge
+              </button>
             </div>
+          </div>
 
-            <!-- Alerts List -->
-            <div class="space-y-4">
-
-                <!-- Critical Alert -->
-                <div
-                    class="bg-white shadow-lg rounded-xl p-5 border-l-4 border-red-600 duration-300 ease-in-out transform hover:scale-105 hover:bg-white">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-triangle-exclamation text-red-500 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold text-gray-800">Water Turbidity is Low</h3>
-                                <p class="text-sm text-gray-600">Current NTU: <span class="font-semibold">27 NTU</span>
-                                    (higher than
-                                    safe range)</p>
-                                <p class="text-xs text-gray-400 mt-1">Detected: 3 mins ago</p>
-                            </div>
-                        </div>
-                        <button
-                            class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-600 transition">Acknowledge</button>
-                    </div>
+          <!-- Warning Alert -->
+          <div
+            class="bg-white shadow-lg rounded-xl p-5 border-l-4 border-yellow-400 duration-300 ease-in-out transform hover:scale-105 hover:bg-white"
+          >
+            <div class="flex justify-between items-center">
+              <div class="flex items-start gap-4">
+                <i
+                  class="fa-solid fa-temperature-half text-yellow-500 text-2xl"
+                ></i>
+                <div>
+                  <h3 class="font-bold text-gray-800">
+                    Temperature Drop Detected
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Decreased by <span class="font-semibold">2.8°C</span> in
+                    last 15 mins.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">
+                    Detected: 20 mins ago
+                  </p>
                 </div>
-
-                <!-- Warning Alert -->
-                <div
-                    class="bg-white shadow-lg rounded-xl p-5 border-l-4 border-yellow-400 duration-300 ease-in-out transform hover:scale-105 hover:bg-white">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-temperature-half text-yellow-500 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold text-gray-800">Temperature Drop Detected</h3>
-                                <p class="text-sm text-gray-600">Decreased by <span class="font-semibold">2.8°C</span>
-                                    in last
-                                    15 mins.</p>
-                                <p class="text-xs text-gray-400 mt-1">Detected: 20 mins ago</p>
-                            </div>
-                        </div>
-                        <button
-                            class="bg-yellow-400 text-white px-4 py-2 rounded-lg text-sm hover:bg-yellow-500 transition">Review</button>
-                    </div>
-                </div>
-
-                <!-- Resolved Alert -->
-                <div
-                    class="bg-white shadow-lg rounded-xl p-5 border-l-4 border-green-500 duration-300 ease-in-out transform hover:scale-105 hover:bg-white">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-water text-green-500 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold text-gray-800">pH Level Normalized</h3>
-                                <p class="text-sm text-gray-600">pH restored to <span class="font-semibold">7.0</span>
-                                    after
-                                    fluctuation.</p>
-                                <p class="text-xs text-gray-400 mt-1">Detected: 2 hours ago</p>
-                            </div>
-                        </div>
-                        <button
-                            class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 transition">OK</button>
-                    </div>
-                </div>
+              </div>
+              <button
+                class="bg-yellow-400 text-white px-4 py-2 rounded-lg text-sm hover:bg-yellow-500 transition"
+              >
+                Review
+              </button>
             </div>
-        </main>
+          </div>
+
+          <!-- Resolved Alert -->
+          <div
+            class="bg-white shadow-lg rounded-xl p-5 border-l-4 border-green-500 duration-300 ease-in-out transform hover:scale-105 hover:bg-white"
+          >
+            <div class="flex justify-between items-center">
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-water text-green-500 text-2xl"></i>
+                <div>
+                  <h3 class="font-bold text-gray-800">pH Level Normalized</h3>
+                  <p class="text-sm text-gray-600">
+                    pH restored to <span class="font-semibold">7.0</span> after
+                    fluctuation.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">
+                    Detected: 2 hours ago
+                  </p>
+                </div>
+              </div>
+              <button
+                class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 transition"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- Footer -->
     <footer class="bg-[#4e47ff0d] border-gray-200 py-10">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10"
+      >
+        <!-- Left Column -->
         <div
-            class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10">
-
-            <!-- Left Column -->
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1">
-                <img src="./images/logo.png" alt="Aqua Mate Logo" class="w-[180px] mb-4" />
-                <p class="text-gray-500 text-sm leading-relaxed max-w-md">
-                    Your trusted partner in smarter, sustainable aquaculture helping
-                    farmers protect their ponds, nurture healthier fish, and build a
-                    better tomorrow.
-                </p>
-            </div>
-
-            <!-- Divider Column -->
-            <div class="hidden lg:flex flex-1 flex-row items-center justify-center gap-[24px]">
-                <div class="w-[1px] h-[180px] bg-gray-400"></div>
-                <div class="w-[1px] h-[220px] bg-black"></div>
-                <div class="w-[1px] h-[180px] bg-gray-400"></div>
-            </div>
-
-            <!-- Right Column -->
-            <div
-                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-16 gap-y-3 text-gray-500 text-sm text-center lg:text-left flex-1">
-                <a href="#" class="hover:text-[#1a2b5b] transition">Home</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Features</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">About Us</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Pricing</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Blog</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Privacy Policy</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">FAQ</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Terms of Service</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Contact Us</a>
-                <a href="#" class="hover:text-[#1a2b5b] transition">Help Center</a>
-            </div>
-
+          class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1"
+        >
+          <img
+            src="./images/logo.png"
+            alt="Aqua Mate Logo"
+            class="w-[180px] mb-4"
+          />
+          <p class="text-gray-500 text-sm leading-relaxed max-w-md">
+            Your trusted partner in smarter, sustainable aquaculture helping
+            farmers protect their ponds, nurture healthier fish, and build a
+            better tomorrow.
+          </p>
         </div>
+
+        <!-- Divider Column -->
+        <div
+          class="hidden lg:flex flex-1 flex-row items-center justify-center gap-[24px]"
+        >
+          <div class="w-[1px] h-[180px] bg-gray-400"></div>
+          <div class="w-[1px] h-[220px] bg-black"></div>
+          <div class="w-[1px] h-[180px] bg-gray-400"></div>
+        </div>
+
+        <!-- Right Column -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-16 gap-y-3 text-gray-500 text-sm text-center lg:text-left flex-1"
+        >
+          <a href="#" class="hover:text-[#1a2b5b] transition">Home</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Features</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">About Us</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Pricing</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Blog</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Privacy Policy</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">FAQ</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition"
+            >Terms of Service</a
+          >
+          <a href="#" class="hover:text-[#1a2b5b] transition">Contact Us</a>
+          <a href="#" class="hover:text-[#1a2b5b] transition">Help Center</a>
+        </div>
+      </div>
     </footer>
 
     <!-- Script for live time -->
     <script>
-        function updateTime() {
-            const now = new Date();
-            document.getElementById("time").textContent = now.toLocaleTimeString();
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
+      function updateTime() {
+        const now = new Date();
+        document.getElementById("time").textContent = now.toLocaleTimeString();
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
     </script>
-</body>
 
+    <script src="./script/script.js"></script>
+  </body>
 </html>
