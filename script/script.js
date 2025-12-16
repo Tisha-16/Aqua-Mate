@@ -112,10 +112,18 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // ✅ USER NAME UPDATE (ALL DASHBOARD PAGES)
+    // ✅ USER NAME
     const userNameElement = document.getElementById("username");
     if (userNameElement) {
       userNameElement.textContent = user.fullName;
+    }
+
+    // ✅ AVATAR LOAD (FIXED)
+    const avatarImg = document.getElementById("avatar");
+    if (avatarImg) {
+      avatarImg.src = user.avatar
+        ? `${API_BASE}${user.avatar}`
+        : `${API_BASE}/uploads/avatars/default.png`;
     }
 
     // Logout
@@ -125,6 +133,102 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         localStorage.clear();
         window.location.href = "index.html";
+      });
+    }
+  }
+
+  // ================= SETTINGS PAGE =================
+  if (currentPage === "setting.html") {
+    const token = localStorage.getItem("token");
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    // ===== Auto fill profile data =====
+    if (user) {
+      document.getElementById("profile-name").value = user.fullName || "";
+      document.getElementById("profile-email").value = user.email || "";
+      document.getElementById("profile-phone").value = user.phone || "";
+    }
+
+    // ================= PROFILE IMAGE UPLOAD =================
+    const avatarImg = document.getElementById("avatar");
+    const avatarInput = document.getElementById("avatarInput");
+
+    if (avatarImg && avatarInput) {
+      avatarImg.addEventListener("click", () => avatarInput.click());
+
+      avatarInput.addEventListener("change", async () => {
+        const file = avatarInput.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append("avatar", file);
+
+        const res = await fetch(`${API_BASE}/api/user/upload-avatar`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          avatarImg.src = `${API_BASE}${data.avatar}`;
+
+          // 🔥 update localStorage user
+          user.avatar = data.avatar;
+          localStorage.setItem("user", JSON.stringify(user));
+
+          alert("Profile picture updated");
+        } else {
+          alert(data.message || "Avatar upload failed");
+        }
+      });
+    }
+
+    // ===== Change Password =====
+    const passwordForm = document.getElementById("password-form");
+    if (passwordForm) {
+      passwordForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const currentPassword =
+          document.getElementById("current-password").value;
+        const newPassword = document.getElementById("new-password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        if (newPassword !== confirmPassword) {
+          alert("New passwords do not match");
+          return;
+        }
+
+        try {
+          const res = await fetch(`${API_BASE}/api/user/change-password`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              currentPassword,
+              newPassword,
+            }),
+          });
+
+          const data = await res.json();
+
+          if (res.ok) {
+            alert("Password updated successfully");
+            passwordForm.reset();
+          } else {
+            alert(data.message || "Password update failed");
+          }
+        } catch (err) {
+          console.error(err);
+          alert("Server error");
+        }
       });
     }
   }
