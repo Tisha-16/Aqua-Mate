@@ -30,10 +30,12 @@
         <span id="time" class="text-sm text-gray-500"></span>
 
         <img
+          id="avatar"
           src="./images/Avatar.png"
-          class="w-8 h-8 bg-white rounded-full p-1"
+          class="w-8 h-8 bg-white rounded-full p-1 cursor-pointer"
           alt="Profile"
         />
+        <input type="file" id="avatarInput" hidden />
 
         <!-- ✅ USER NAME -->
         <h1 id="username" class="text-xl font-bold text-gray-900"></h1>
@@ -49,7 +51,7 @@
       <nav
         class="bg-[#4e47ff0d] text-gray-700 font-medium w-52 h-screen pt-5 space-y-4"
       >
-        <a href="index.html" class="block py-2 px-5 rounded hover:bg-white"
+        <a href="dashboard.html" class="block py-2 px-5 rounded hover:bg-white"
           >Dashboard <i class="fa-solid fa-house ml-1"></i
         ></a>
         <hr />
@@ -80,37 +82,40 @@
           <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
             <i class="fa-solid fa-user text-blue-600"></i> Profile Settings
           </h3>
-          <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form id="profile-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label class="block text-gray-700 font-medium mb-1"
                 >Full Name</label
               >
               <input
                 type="text"
+                id="profile-name"
                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                value="Motin Kaka"
               />
             </div>
+
             <div>
               <label class="block text-gray-700 font-medium mb-1"
                 >Email Address</label
               >
               <input
                 type="email"
+                id="profile-email"
                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                value="motin@example.com"
               />
             </div>
+
             <div>
               <label class="block text-gray-700 font-medium mb-1"
                 >Phone Number</label
               >
               <input
                 type="text"
+                id="profile-phone"
                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                value="+8801712345678"
               />
             </div>
+
             <div>
               <label class="block text-gray-700 font-medium mb-1"
                 >Hatchery Name</label
@@ -118,9 +123,9 @@
               <input
                 type="text"
                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
-                value="Blue Water Hatchery"
               />
             </div>
+
             <div class="col-span-full text-right mt-4">
               <button
                 type="submit"
@@ -137,37 +142,43 @@
           <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
             <i class="fa-solid fa-lock text-purple-600"></i> Change Password
           </h3>
-          <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form
+            id="password-form"
+            class="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
             <div>
-              <label class="block text-gray-700 font-medium mb-1"
-                >Current Password</label
-              >
+              <label class="block text-gray-700 font-medium mb-1">
+                Current Password
+              </label>
               <input
                 type="password"
-                placeholder="Enter current password"
+                id="current-password"
                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200"
               />
             </div>
+
             <div>
-              <label class="block text-gray-700 font-medium mb-1"
-                >New Password</label
-              >
+              <label class="block text-gray-700 font-medium mb-1">
+                New Password
+              </label>
               <input
                 type="password"
-                placeholder="Enter new password"
+                id="new-password"
                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200"
               />
             </div>
+
             <div>
-              <label class="block text-gray-700 font-medium mb-1"
-                >Confirm New Password</label
-              >
+              <label class="block text-gray-700 font-medium mb-1">
+                Confirm New Password
+              </label>
               <input
                 type="password"
-                placeholder="Re-enter new password"
+                id="confirm-password"
                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-purple-200"
               />
             </div>
+
             <div class="col-span-full text-right mt-4">
               <button
                 type="submit"
