@@ -1,0 +1,78 @@
+/* Container */
+.sponsor-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 8px 24px #0000001a;
+}
+
+/* Header */
+.sponsor-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  color: #555555;
+}
+
+/* Form */
+.sponsor-form {
+  gap: 1.5rem;
+}
+
+/* Sections */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+/* Textarea */
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit */
+.submit-btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .sponsor-container {
+    padding: 1.25rem;
+  }
+}
