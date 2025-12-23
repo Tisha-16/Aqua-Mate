@@ -187,6 +187,49 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // ===== UPDATE PROFILE INFO =====
+    const profileForm = document.getElementById("profile-form");
+
+    if (profileForm) {
+      profileForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fullName = document.getElementById("profile-name").value.trim();
+        const phone = document.getElementById("profile-phone").value.trim();
+
+        try {
+          const res = await fetch(`${API_BASE}/api/user/update-profile`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ fullName, phone }),
+          });
+
+          const data = await res.json();
+
+          if (res.ok) {
+            // 🔁 localStorage update
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            // username update everywhere
+            const userNameElement = document.getElementById("username");
+            if (userNameElement) {
+              userNameElement.textContent = data.user.fullName;
+            }
+
+            alert("Profile updated successfully");
+          } else {
+            alert(data.message || "Profile update failed");
+          }
+        } catch (err) {
+          console.error(err);
+          alert("Server error");
+        }
+      });
+    }
+
     // ===== Change Password =====
     const passwordForm = document.getElementById("password-form");
     if (passwordForm) {
